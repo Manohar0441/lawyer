@@ -13,6 +13,7 @@ const EmailVerify = () => {
 		const verifyEmailUrl = async () => {
 			try {
 				const url = `http://localhost:8080/api/users/${param.id}/verify/${param.token}`;
+				console.log(url);
 				const { data } = await axios.get(url);
 				console.log(data);
 				setValidUrl(true);
@@ -30,7 +31,7 @@ const EmailVerify = () => {
 				<div className={styles.container}>
 					<img src={success} alt="success_img" className={styles.success_img} />
 					<h1>Email verified successfully</h1>
-					<Link to="./Login">
+					<Link to="/login">
 						<button className={styles.green_btn}>Login</button>
 					</Link>
 				</div>
